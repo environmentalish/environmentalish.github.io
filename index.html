@@ -1,1 +1,32 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Merry Christmas Bailey!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <script src="script.js"></script> -->
+	<script
+	  src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <script>
+		var FEED_URL = "http://feeds.soundcloud.com/users/soundcloud:users:563335950/sounds.rss";
+	
+		$.get(FEED_URL, function (data) {
+			$(data).find("item").each(function () { // or "item" or whatever suits your feed
+				var el = $(this);
+
+				console.log("------------------------");
+				console.log("title      : " + el.find("title").text());
+				console.log("author     : " + el.find("author").text());
+				console.log("description: " + el.find("description").text());
+			});
+		});
+	</script>
+  </body>
+</html>
+
