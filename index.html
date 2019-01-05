@@ -14,7 +14,7 @@
   <body>
 	Testing!
     <script>
-		var FEED_URL = "feeds.soundcloud.com/users/soundcloud:users:563335950/sounds.rss";
+		var FEED_URL = "https://feeds.soundcloud.com/users/soundcloud:users:563335950/sounds.rss";
 	
 		$.get(FEED_URL, function (data) {
 			$(data).find("item").each(function () { // or "item" or whatever suits your feed
